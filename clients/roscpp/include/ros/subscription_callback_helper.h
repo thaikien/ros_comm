@@ -51,6 +51,7 @@ namespace ros
 
 struct SubscriptionCallbackHelperDeserializeParams
 {
+  boost::shared_array<uint8_t> shared_data;
   uint8_t* buffer;
   uint32_t length;
   boost::shared_ptr<M_string> connection_header;

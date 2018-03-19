@@ -68,6 +68,7 @@ VoidConstPtr MessageDeserializer::deserialize()
   try
   {
     SubscriptionCallbackHelperDeserializeParams params;
+    params.shared_data = serialized_message_.buf;
     params.buffer = serialized_message_.message_start;
     params.length = serialized_message_.num_bytes - (serialized_message_.message_start - serialized_message_.buf.get());
     params.connection_header = connection_header_;
